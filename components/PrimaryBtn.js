@@ -1,4 +1,4 @@
-import styled  from "styled-components";
+import styled, {css}  from "styled-components";
 
 const StyledButton = styled.button`
  background-color: #5542F6;
@@ -6,10 +6,18 @@ const StyledButton = styled.button`
  color: #fff;
  padding: 5px 15px;
  border-radius: 5px;
+ cursor: pointer;
+ ${props => props.size === 'l' && css`
+    font-size:1.2rem;
+    padding: 10px 20px;
+    svg{
+      height: 20px;
+    }
+  `}
 `;
 
-export default function PrimaryBtn({children,...rest}) {
+export default function PrimaryBtn({children,... rest}) {
  return (
-  <button {...rest}>{children}</button>
+  <StyledButton {...rest} >{children}</StyledButton>
  );
 }

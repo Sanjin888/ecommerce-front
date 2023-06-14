@@ -1,6 +1,7 @@
 import Center from "./Center";
 import styled from "styled-components";
 import Button from "./Button";
+import ButtonLink from "./ButtonLink";
 
 const Bg = styled.div`
   background-color: #222;
@@ -21,7 +22,7 @@ const Desc = styled.p`
 
 const ColumnsWrapper = styled.div`
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 40px;
   img {
     max-width: 100%;
@@ -39,28 +40,24 @@ const ButtonsWrapper = styled.div`
   margin-top: 25px;
 `;
 
-export default function Featured() {
+export default function Featured({ product }) {
   return (
     <Bg>
       <Center>
         <ColumnsWrapper>
           <Column>
             <div>
-              <Title>Pro Anywhere</Title>
-              <Desc>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum
-              </Desc>
+              <Title>{product.title}</Title>
+              <Desc>{product.description} </Desc>
               <ButtonsWrapper>
-                <Button white="true" outline="true" >
-                  Read More
-                </Button>
-                <Button primary="true" >
+                <ButtonLink
+                  href={"/product/" + product._id}
+                  outline="true"
+                  white="true"
+                >
+                  Read more
+                </ButtonLink>
+                <Button primary="true">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -75,10 +72,7 @@ export default function Featured() {
             </div>
           </Column>
           <Column>
-            <img
-              src="C:\Users\Sanjin\Desktop\ecommerce-front\assets\Macbook.jpg"
-              alt="Macbook"
-            />
+            <img src="./assets\Macbook.jpg" alt="Macbook" />
           </Column>
         </ColumnsWrapper>
       </Center>

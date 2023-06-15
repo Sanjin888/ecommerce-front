@@ -51,7 +51,7 @@ export default function Featured({ product }) {
               <Desc>{product.description} </Desc>
               <ButtonsWrapper>
                 <ButtonLink
-                  href={"/product/" + product._id}
+                  href={'/product/'+product._id}
                   outline="true"
                   white="true"
                 >

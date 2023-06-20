@@ -64,7 +64,7 @@ export default function ProductWhiteBox({
   images,
 }) {
 
-  const {addProduct} = useContext(CartContext)
+  const {addProduct} = useContext(CartContext);
   const url = '/product/' + _id;
   return (
     <ProductWrapper>

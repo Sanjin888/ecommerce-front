@@ -10,11 +10,18 @@ export const ButtonStyle = css`
   align-items: center;
   text-decoration: none;
   font-weight: 500;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   svg {
     height: 16px;
     margin-right: 5px;
   }
+
+  ${(props) =>
+    props.block &&
+    css`
+      display: block;
+      width: 100%;
+    `}
 
   ${(props) =>
     props.white &&
@@ -30,6 +37,23 @@ export const ButtonStyle = css`
     css`
       background-color: transparent;
       color: #fff;
+      border: 1px solid #fff;
+    `}
+
+    ${(props) =>
+    props.black &&
+    !props.outline &&
+    css`
+      background-color: #000;
+      color: #fff;
+    `}
+
+  ${(props) =>
+    props.black &&
+    props.outline &&
+    css`
+      background-color: transparent;
+      color: #000;
       border: 1px solid #fff;
     `}
 

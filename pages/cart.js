@@ -217,7 +217,7 @@ export default function CartPage() {
                      value={country}
                      name="country"
                      onChange={ev => setCountry(ev.target.value)}/>
-              <Button black block
+              <Button black="true" block="true"
                       onClick={goToPayment}>
                 Continue to payment
               </Button>

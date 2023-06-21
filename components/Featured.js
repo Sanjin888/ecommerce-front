@@ -72,7 +72,7 @@ export default function Featured({ product }) {
             </div>
           </Column>
           <Column>
-            <img src="./assets\Macbook.jpg" alt="Macbook" />
+            <img src="./assets\Macbook.jpg" alt="Iphone" />
           </Column>
         </ColumnsWrapper>
       </Center>

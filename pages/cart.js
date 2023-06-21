@@ -94,7 +94,7 @@ export default function CartPage() {
       setIsSuccess(true);
       clearCart();
     }
-  }, []);
+  }, [clearCart]);
   function moreOfThisProduct(id) {
     addProduct(id);
   }

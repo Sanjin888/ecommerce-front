@@ -75,7 +75,7 @@ export default function ProductWhiteBox({
         <Title href={url} >{title}</Title>
         <PriceRow>
           <Price>${price}</Price>
-          <Button onClick={() => addProduct(_id)} primary="true" outline="true" >
+          <Button block="true"  onClick={() => addProduct(_id)} primary="true" outline="true" >
             Add to Cart
           </Button>
         </PriceRow>

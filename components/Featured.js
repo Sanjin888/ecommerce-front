@@ -16,6 +16,9 @@ const Title = styled.h1`
   margin: 0;
   font-weight: normal;
   font-size: 3rem;
+  @media screen and (min-width: 768px) {
+    font-size: 3rem;
+  }
 `;
 
 const Desc = styled.p`
@@ -25,10 +28,25 @@ const Desc = styled.p`
 
 const ColumnsWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr;
   gap: 40px;
   img {
     max-width: 100%;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+  div:nth-child(1) {
+    order: 2;
+  }
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1.1fr 0.9fr;
+    div:nth-child(1) {
+      order: 0;
+    }
+    img {
+      max-width: 100%;
+    }
   }
 `;
 
@@ -44,7 +62,7 @@ const ButtonsWrapper = styled.div`
 `;
 
 export default function Featured({ product }) {
-  const {addProduct} = useContext(CartContext);
+  const { addProduct } = useContext(CartContext);
   function addFeaturedToCart() {
     addProduct(product._id);
   }
@@ -58,21 +76,24 @@ export default function Featured({ product }) {
               <Desc>{product.description} </Desc>
               <ButtonsWrapper>
                 <ButtonLink
-                  href={'/product/'+product._id}
+                  href={"/product/" + product._id}
                   outline="true"
                   white="true"
                 >
                   Read more
                 </ButtonLink>
-                <Button white="true" onClick={addFeaturedToCart} >
-                  <CartIcon/>
+                <Button white="true" onClick={addFeaturedToCart}>
+                  <CartIcon />
                   Add To Cart
                 </Button>
               </ButtonsWrapper>
             </div>
           </Column>
           <Column>
-            <img src="https://edvin-next-ecommerce.s3.amazonaws.com/1688083434853.png" alt="" />
+            <img
+              src="https://edvin-next-ecommerce.s3.amazonaws.com/1688083434853.png"
+              alt=""
+            />
           </Column>
         </ColumnsWrapper>
       </Center>

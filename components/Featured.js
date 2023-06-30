@@ -72,7 +72,7 @@ export default function Featured({ product }) {
             </div>
           </Column>
           <Column>
-            <img src="./assets\Macbook.jpg" alt="Iphone" />
+            <img src="https://edvin-next-ecommerce.s3.amazonaws.com/1688083434853.png" alt="" />
           </Column>
         </ColumnsWrapper>
       </Center>
